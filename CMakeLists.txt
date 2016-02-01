@@ -11,26 +11,12 @@ file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/include)
 file(COPY ${PROJECT_SOURCE_DIR}/api/example.h  DESTINATION ${PROJECT_BINARY_DIR}/include)
 file(COPY ${PROJECT_SOURCE_DIR}/api/example.py DESTINATION ${PROJECT_BINARY_DIR})
 
-option(ENABLE_COVERAGE "Enable test coverage" OFF)
-if(ENABLE_COVERAGE)
-    if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-    endif()
-endif()
-
 include_directories(${PROJECT_SOURCE_DIR}/api)
 
 add_library(
     example
     SHARED
     src/example.cpp
-    )
-
-add_custom_target(
-    git_update
-    COMMAND git submodule init
-    COMMAND git submodule update
-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     )
 
 include_directories(
@@ -48,8 +34,6 @@ add_library(gtest ${GTEST_SOURCES})
 foreach(_source ${GTEST_SOURCES})
     set_source_files_properties(${_source} PROPERTIES GENERATED 1)
 endforeach()
-
-add_dependencies(gtest git_update)
 
 add_executable(
     unit_tests
