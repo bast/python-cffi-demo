@@ -5,8 +5,6 @@ import sys
 BUILD_DIR = sys.argv[-1]
 sys.path.append(BUILD_DIR)
 
-import os
-import subprocess
 import pytest
 from example import ffi, lib
 
