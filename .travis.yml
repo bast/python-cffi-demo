@@ -13,7 +13,6 @@ script:
   - cd build
   - cmake ..
   - make
-  - make test
   - cd ..
   - py.test -vv test/test.py build
 
