@@ -1,13 +1,26 @@
 language:
   - cpp
 
-install:
-  - sudo apt-add-repository --yes ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update
-  - sudo apt-get install gcc-4.9 g++-4.9
+sudo: false
+
+matrix:
+  include:
+
+    - os: linux
+      compiler: gcc
+      addons: &gcc49
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.9', 'gcc-4.9']
+      env: CXX_COMPILER='g++-4.9' C_COMPILER='gcc-4.9'
 
 install:
   - pip install -r requirements.txt
+
+before_script:
+  - cd ${TRAVIS_BUILD_DIR}
+  - export CXX=${CXX_COMPILER}
+  - export CC=${C_COMPILER}
 
 script:
   - mkdir build
