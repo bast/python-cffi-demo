@@ -39,20 +39,3 @@ def test_add(context):
     Test adding.
     """
     assert lib.example_add(context, 3, 4) == 7
-
-
-def test_leaks():
-    """
-    Test memory leaks.
-    """
-    res = subprocess.Popen(
-        [
-            'valgrind',
-            os.path.join(BUILD_DIR, 'bin', 'unit_tests')
-        ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE).communicate()[1]
-    if not 'All heap blocks were freed -- no leaks are possible' in res:
-        assert 'definitely lost: 0 bytes in 0 blocks' in res
-        assert 'indirectly lost: 0 bytes in 0 blocks' in res
-        assert 'possibly lost: 0 bytes in 0 blocks' in res
