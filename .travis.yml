@@ -29,7 +29,7 @@ script:
   - make
   - cd ..
   - export PYTHONPATH=$PYTHONPATH:$(pwd)/build
-  - pep8 py.test
+  - pep8 test/test.py
   - py.test -vv test/test.py
 
 notifications:
