@@ -28,7 +28,8 @@ script:
   - cmake ..
   - make
   - cd ..
-  - py.test -vv test/test.py build
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)/build
+  - py.test -vv test/test.py
 
 notifications:
   email: false

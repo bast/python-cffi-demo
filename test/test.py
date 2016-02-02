@@ -1,10 +1,3 @@
-"""
-Unit tests.
-"""
-import sys
-BUILD_DIR = sys.argv[-1]
-sys.path.append(BUILD_DIR)
-
 import pytest
 from example import ffi, lib
 
