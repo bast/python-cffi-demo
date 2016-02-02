@@ -8,11 +8,13 @@ def context(request):
     Add context to test functions.
     """
     ctx = lib.example_new()
+
     def cleanup():
         """
         Clean up the context.
         """
         lib.example_free(ctx)
+
     request.addfinalizer(cleanup)
     return ctx
 
