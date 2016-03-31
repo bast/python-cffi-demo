@@ -1,26 +1,22 @@
-language:
-  - python
+language: python
 
 sudo: false
 
 matrix:
   include:
-
     - os: linux
       compiler: gcc
       addons: &gcc49
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9', 'gcc-4.9']
-      env: CXX_COMPILER='g++-4.9' C_COMPILER='gcc-4.9'
+          packages: ['g++-4.9', 'gcc-4.9', 'gfortran-4.9']
+      env:
+        - CXX='g++-4.9'
+        - CC='gcc-4.9'
+        - FC='gfortran-4.9'
 
 install:
   - pip install -r requirements.txt
-
-before_script:
-  - cd ${TRAVIS_BUILD_DIR}
-  - export CXX=${CXX_COMPILER}
-  - export CC=${C_COMPILER}
 
 script:
   - mkdir build
@@ -28,9 +24,8 @@ script:
   - cmake ..
   - make
   - cd ..
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)/build
-  - pep8 test/test.py
-  - py.test -vv test/test.py
+  - pep8 test.py
+  - py.test -vv test.py
 
 notifications:
   email: false
