@@ -15,5 +15,5 @@ def test_fortran_code():
 
 
 def test_pi():
-    pi = approximate_pi(seed=0, num_points=1000000)
+    pi = approximate_pi(num_points=1000000)
     assert abs(pi - 3.141593) < 1.0e-3

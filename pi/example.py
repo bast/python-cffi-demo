@@ -5,9 +5,10 @@ def _distance_to_origin_squared(x, y):
     return x*x + y*y
 
 
-def approximate_pi(seed, num_points):
+def approximate_pi(num_points):
 
-    random.seed(seed)
+    random.seed(0)
+
     num_inside = 0
 
     for _ in range(num_points):
