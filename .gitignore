@@ -2,3 +2,4 @@ build*/
 *.pyc
 __pycache__/
 venv/
+.cache/
