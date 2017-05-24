@@ -1,5 +1,7 @@
+// provides rand and RAND_MAX
 #include <cstdlib>
-#include <stdio.h>
+
+#include "pi.h"
 
 double distance_to_origin_squared(const double x, const double y)
 {
@@ -23,11 +25,4 @@ double approximate_pi(const int num_points)
     // we multiply by 4 to get the full circle */
     // from the 4 segments */
     return 4.0 * num_inside / ((double)num_points);
-}
-
-int main()
-{
-    printf("pi = %f\n", approximate_pi(1000000));
-
-    return 0;
 }
