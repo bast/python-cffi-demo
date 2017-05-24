@@ -7,23 +7,41 @@ add_library(fortran_example SHARED example.F90)
 
 include_directories(${PROJECT_BINARY_DIR})
 
-foreach(language cpp f90)
-    add_library(
-        pi-${language}
-        SHARED
-        pi/pi.${language}
-        )
+# c library
+add_library(
+    pi-cpp
+    SHARED
+    pi/pi.cpp
+    )
 
-    add_executable(
-        pi-${language}.x
-        pi/main.${language}
-        )
+# fortran library
+add_library(
+    pi-f90
+    SHARED
+    pi/pi.f90
+    )
 
-    target_link_libraries(
-        pi-${language}.x
-        pi-${language}
-        )
-endforeach()
+# c executable
+add_executable(
+    pi-cpp.x
+    pi/main.cpp
+    )
+target_link_libraries(
+    pi-cpp.x
+    pi-cpp
+    pi-f90
+    )
+
+# fortran executable
+add_executable(
+    pi-f90.x
+    pi/main.f90
+    )
+target_link_libraries(
+    pi-f90.x
+    pi-cpp
+    pi-f90
+    )
 
 include(GenerateExportHeader)
 generate_export_header(pi-cpp)

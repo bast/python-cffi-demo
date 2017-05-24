@@ -1,5 +1,7 @@
 module pi
 
+    use, intrinsic :: iso_c_binding, only: c_double, c_int
+
     implicit none
 
     public approximate_pi_fortran
@@ -15,8 +17,8 @@ contains
         distance_to_origin_squared = x*x + y*y
     end function
 
-    real(8) function approximate_pi_fortran(num_points)
-        integer, intent(in) :: num_points
+    real(c_double) function approximate_pi_fortran(num_points) bind (c)
+        integer(c_int), value :: num_points
 
         integer :: i
         integer :: num_inside

@@ -14,6 +14,9 @@ extern "C" {
 PI_API
 double approximate_pi_c(const int num_points);
 
+PI_API
+double approximate_pi_fortran(const int num_points);
+
 #ifdef __cplusplus
 }
 #endif
