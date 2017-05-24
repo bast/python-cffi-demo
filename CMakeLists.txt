@@ -26,6 +26,7 @@ add_executable(
     pi_cpp.x
     pi/main.cpp
     )
+# linked against both c and fortran libraries
 target_link_libraries(
     pi_cpp.x
     pi_cpp
@@ -37,6 +38,7 @@ add_executable(
     pi_f90.x
     pi/main.f90
     )
+# linked against both c and fortran libraries
 target_link_libraries(
     pi_f90.x
     pi_cpp
