@@ -10,6 +10,10 @@ endif()
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 
+# set default build paths
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+
 add_library(c_example SHARED example.c)
 add_library(fortran_example SHARED example.F90)
 
