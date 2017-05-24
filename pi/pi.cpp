@@ -22,7 +22,7 @@ double approximate_pi_c(const int num_points)
         }
     }
 
-    // we multiply by 4 to get the full circle */
-    // from the 4 segments */
+    // we multiply by 4 to get the full circle
+    // from the 4 segments
     return 4.0 * num_inside / ((double)num_points);
 }
