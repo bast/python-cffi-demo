@@ -1,6 +1,6 @@
 import os
 from .cffi_helpers import get_lib_handle
-from .example import approximate_pi as approximate_pi_python
+from .pi import approximate_pi as approximate_pi_python
 
 __all__ = [
     'approximate_pi_python',
