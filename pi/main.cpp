@@ -4,7 +4,7 @@
 
 int main()
 {
-    printf("pi = %f\n", approximate_pi(1000000));
+    printf("pi computed by c = %f\n", approximate_pi(1000000));
 
     return 0;
 }

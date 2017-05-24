@@ -4,6 +4,6 @@ program main
 
     implicit none
 
-    print *, approximate_pi(1000000)
+    print *, "pi computed by fortran = ", approximate_pi(1000000)
 
 end program
