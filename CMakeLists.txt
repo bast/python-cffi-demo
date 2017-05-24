@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 project(example C CXX Fortran)
 
+# if CMAKE_BUILD_TYPE undefined, we set it to Release
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release")
+endif()
+
 add_library(c_example SHARED example.c)
 add_library(fortran_example SHARED example.F90)
 
