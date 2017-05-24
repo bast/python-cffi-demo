@@ -1,5 +1,7 @@
+# stop configuration if cmake version is below 2.8
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
+# project name and enabled languages
 project(example C CXX Fortran)
 
 # if CMAKE_BUILD_TYPE undefined, we set it to Release
@@ -7,6 +9,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release")
 endif()
 
+# compiler flags for release mode
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 
