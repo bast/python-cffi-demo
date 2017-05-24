@@ -1,8 +1,10 @@
-program pi
+module pi
 
     implicit none
 
-    print *, approximate_pi(1000000)
+    public approximate_pi
+
+    private
 
 contains
 
@@ -36,4 +38,4 @@ contains
         approximate_pi = 4.0*num_inside/real(num_points)
     end function
 
-end program
+end module

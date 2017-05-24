@@ -5,19 +5,25 @@ project(example C CXX Fortran)
 add_library(c_example SHARED example.c)
 add_library(fortran_example SHARED example.F90)
 
-add_library(pi SHARED pi/pi.cpp)
-
 include_directories(${PROJECT_BINARY_DIR})
 
-add_executable(
-    pi.x
-    pi/main.cpp
-    )
+foreach(language cpp f90)
+    add_library(
+        pi-${language}
+        SHARED
+        pi/pi.${language}
+        )
 
-target_link_libraries(
-    pi.x
-    pi
-    )
+    add_executable(
+        pi-${language}.x
+        pi/main.${language}
+        )
+
+    target_link_libraries(
+        pi-${language}.x
+        pi-${language}
+        )
+endforeach()
 
 include(GenerateExportHeader)
-generate_export_header(pi)
+generate_export_header(pi-cpp)
