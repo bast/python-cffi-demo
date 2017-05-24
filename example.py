@@ -14,5 +14,5 @@ if sys.platform == "darwin":
 else:
     suffix = 'so'
 
-c_lib = ffi.dlopen(os.path.join('build', 'libc_example.{}'.format(suffix)))
-fortran_lib = ffi.dlopen(os.path.join('build', 'libfortran_example.{}'.format(suffix)))
+c_lib = ffi.dlopen(os.path.join('build', 'lib/libc_example.{}'.format(suffix)))
+fortran_lib = ffi.dlopen(os.path.join('build', 'lib/libfortran_example.{}'.format(suffix)))
