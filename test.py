@@ -2,12 +2,25 @@ import time
 import pi
 
 
-def test_pi():
-    result = pi.approximate_pi_python(num_points=1000000)
+def test_pi_python():
+    num_points = 1000000
+    result = pi.approximate_pi_python(num_points)
     assert abs(result - 3.141593) < 1.0e-3
 
 
-def main():
+def test_pi_c():
+    num_points = 1000000
+    result = pi.approximate_pi_c(num_points)
+    assert abs(result - 3.141593) < 1.0e-3
+
+
+def test_pi_fortran():
+    num_points = 1000000
+    result = pi.approximate_pi_fortran(num_points)
+    assert abs(result - 3.141593) < 1.0e-3
+
+
+def print_timings():
     num_points = 5000000
 
     for (lang, function) in [('python', pi.approximate_pi_python),
@@ -22,4 +35,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    print_timings()
