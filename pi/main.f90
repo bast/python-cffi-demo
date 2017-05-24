@@ -6,10 +6,6 @@ program main
     implicit none
 
     interface approximate_pi_c
-!       function example_new() result(context) bind (c)
-!           import :: c_ptr
-!           type(c_ptr) :: context
-!       end function
         function approximate_pi_c(num_points) bind (c)
             import :: c_double, c_int
             integer(c_int), value :: num_points
