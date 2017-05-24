@@ -8,7 +8,7 @@ double distance_to_origin_squared(const double x, const double y)
     return x * x + y * y;
 }
 
-double approximate_pi(const int num_points)
+double approximate_pi_c(const int num_points)
 {
     int num_inside = 0;
 

@@ -2,7 +2,7 @@ module pi
 
     implicit none
 
-    public approximate_pi
+    public approximate_pi_fortran
 
     private
 
@@ -15,7 +15,7 @@ contains
         distance_to_origin_squared = x*x + y*y
     end function
 
-    real(8) function approximate_pi(num_points)
+    real(8) function approximate_pi_fortran(num_points)
         integer, intent(in) :: num_points
 
         integer :: i
@@ -35,7 +35,7 @@ contains
 
         ! we multiply by 4 to get the full circle
         ! from the 4 segments
-        approximate_pi = 4.0*num_inside/real(num_points)
+        approximate_pi_fortran = 4.0*num_inside/real(num_points)
     end function
 
 end module

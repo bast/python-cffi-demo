@@ -12,7 +12,7 @@ extern "C" {
 #endif
 
 PI_API
-double approximate_pi(const int num_points);
+double approximate_pi_c(const int num_points);
 
 #ifdef __cplusplus
 }
