@@ -15,5 +15,5 @@ cd build
 cmake ..
 make
 cd ..
-py.test -vv test.py
+PI_BUILD_DIR=build pytest -vv test.py
 ```
