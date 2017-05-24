@@ -1,4 +1,3 @@
-#from example import c_lib, fortran_lib
 from pi import approximate_pi
 
 

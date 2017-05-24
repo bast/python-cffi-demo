@@ -25,7 +25,7 @@ script:
   - make
   - cd ..
   - pep8 test.py
-  - pytest -vv test.py
+  - PI_BUILD_DIR=build pytest -vv test.py
 
 notifications:
   email: false
