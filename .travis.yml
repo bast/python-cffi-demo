@@ -24,7 +24,7 @@ script:
   - cmake ..
   - make
   - cd ..
-  - pep8 test.py
+  - pep8 --ignore E501 test.py
   - PI_BUILD_DIR=build pytest -vv test.py
 
 notifications:
