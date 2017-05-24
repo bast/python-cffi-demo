@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 # project name and enabled languages
-project(example C CXX Fortran)
+project(example CXX Fortran)
 
 # if CMAKE_BUILD_TYPE undefined, we set it to Release
 if(NOT CMAKE_BUILD_TYPE)
@@ -16,9 +16,6 @@ set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 # set default build paths
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-
-add_library(c_example SHARED example.c)
-add_library(fortran_example SHARED example.F90)
 
 include_directories(${PROJECT_BINARY_DIR})
 
