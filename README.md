@@ -83,6 +83,9 @@ pi computed by c =    3.1416640000000000
 
 ## Timing the libraries through a Python interface
 
+Default is 2M points but feel free to experiment by increasing the number
+of points in `test.py`.
+
 ```shell
 $ PI_BUILD_DIR=build python test.py
 
