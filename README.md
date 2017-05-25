@@ -23,7 +23,7 @@ These are combined in an example Python package that we call `pi`.
 
 ## Lower-level learning goals
 
-- Approximate pi using the Monte Carlo
+- Approximate pi using the Monte Carlo method
 - Calling Fortran libraries from C(++)
 - Calling C(++) libraries from Fortran
 - Calling Fortran/C(++) libraries from Python using [Python CFFI](https://cffi.readthedocs.io)
