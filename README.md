@@ -23,6 +23,12 @@ At the same time we demonstrate how to automatically test the interface and the
 3 implementations.
 
 
+## Limitations
+
+We do not discuss memory allocation strategies (yet). This is something for the
+future.
+
+
 ## Lower-level learning goals
 
 - Approximate pi using the Monte Carlo method
@@ -52,6 +58,14 @@ make
 cd ..
 PI_BUILD_DIR=build pytest -vv test.py
 ```
+
+## Requirements
+
+- Python
+- [pytest](https://docs.pytest.org)
+- [Python CFFI](https://cffi.readthedocs.io)
+- [CMake](https://cmake.org/download/)
+- Fortran and C++ compilers
 
 
 ## Installing with pip
@@ -96,3 +110,11 @@ python  pi=3.14163 time spent: 1.749 sec
 c       pi=3.14190 time spent: 0.041 sec
 fortran pi=3.14225 time spent: 0.126 sec
 ```
+
+
+## How you can contribute
+
+Feel free to improve the C++, Fortran, and Python codes.
+
+If you know intuitive examples that we can use to demonstrate memory allocation
+strategies, please suggest these.
