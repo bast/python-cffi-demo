@@ -18,7 +18,9 @@ throwing darts:
 This example is implemented in 3 different languages (C++, Fortran, Python) and
 we demonstrate how to call this functionality across languages.
 
-These are combined in an example Python package that we call `pi`.
+These 3 implementations are combined in an example Python package that we call `pi`.
+At the same time we demonstrate how to automatically test the interface and the
+3 implementations.
 
 
 ## Lower-level learning goals
