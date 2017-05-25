@@ -2,31 +2,29 @@ import time
 import pi
 
 
+num_points = 5000000
+pi_reference = 3.141593
+
+
 def test_pi_python():
-    num_points = 1000000
     result = pi.approximate_pi_python(num_points)
-    assert abs(result - 3.141593) < 2.0e-3
+    assert abs(result - pi_reference) < 2.0e-3
 
 
 def test_pi_c():
-    num_points = 1000000
-    result = pi.approximate_pi_c(num_points)
-    assert abs(result - 3.141593) < 2.0e-3
+    result = pi.approximate_pi_python(num_points)
+    assert abs(result - pi_reference) < 2.0e-3
 
 
 def test_pi_fortran():
-    num_points = 1000000
-    result = pi.approximate_pi_fortran(num_points)
-    assert abs(result - 3.141593) < 2.0e-3
+    result = pi.approximate_pi_python(num_points)
+    assert abs(result - pi_reference) < 2.0e-3
 
 
 def print_timings():
-    num_points = 5000000
-
     for (lang, function) in [('python', pi.approximate_pi_python),
                              ('c', pi.approximate_pi_c),
                              ('fortran', pi.approximate_pi_fortran)]:
-
         t0 = time.clock()
         result = function(num_points)
         time_spent = time.clock() - t0
