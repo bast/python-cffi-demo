@@ -54,8 +54,6 @@ script:
   - cd ..
   - pep8 --ignore E501 test.py
   - PI_BUILD_DIR=build pytest -vv test.py
-
-after_success:
   - mkdir test-setup-script
   - cd test-setup-script
   - virtualenv venv
