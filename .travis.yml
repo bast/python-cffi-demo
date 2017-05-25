@@ -14,6 +14,18 @@ matrix:
         - CXX='g++-4.9'
         - CC='gcc-4.9'
         - FC='gfortran-4.9'
+      python: 2.7
+    - os: linux
+      compiler: gcc
+      addons: &gcc49
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.9', 'gcc-4.9', 'gfortran-4.9']
+      env:
+        - CXX='g++-4.9'
+        - CC='gcc-4.9'
+        - FC='gfortran-4.9'
+      python: 3.6
     - os: osx
       osx_image: xcode7.3
       compiler: gcc
