@@ -6,7 +6,7 @@
 
 - Inspired by Armin Ronacher's ["Beautiful Native Libraries"](http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/)
 
-![](https://github.com/bast/python-cffi-demo/raw/master/img/darts.jpg "darts")
+![](../master/img/darts.jpg "darts")
 
 
 ## How to build this demo
