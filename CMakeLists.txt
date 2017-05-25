@@ -13,6 +13,13 @@ endif()
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 
+# workaround for CMP0042 warning on Mac
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    if(NOT DEFINED CMAKE_MACOSX_RPATH)
+        set(CMAKE_MACOSX_RPATH ON)
+    endif()
+endif()
+
 # set default build paths
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
