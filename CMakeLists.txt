@@ -35,7 +35,7 @@ add_library(
 
 # fortran library
 add_library(
-    pi_f90
+    pi_fortran
     SHARED
     pi/pi.f90
     )
@@ -49,19 +49,19 @@ add_executable(
 target_link_libraries(
     pi_cpp.x
     pi_cpp
-    pi_f90
+    pi_fortran
     )
 
 # fortran executable
 add_executable(
-    pi_f90.x
+    pi_fortran.x
     pi/main.f90
     )
 # linked against both c and fortran libraries
 target_link_libraries(
-    pi_f90.x
+    pi_fortran.x
     pi_cpp
-    pi_f90
+    pi_fortran
     )
 
 include(GenerateExportHeader)

@@ -75,7 +75,7 @@ $ ./bin/pi_cpp.x
 pi computed by c = 3.141664
 pi computed by fortran = 3.141636
 
-$ ./bin/pi_f90.x
+$ ./bin/pi_fortran.x
 pi computed by fortran =    3.1416358947753906
 pi computed by c =    3.1416640000000000
 ```

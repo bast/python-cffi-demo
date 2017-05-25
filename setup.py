@@ -62,7 +62,7 @@ class install(_install.install):
             suffix = 'so'
 
         for f in [os.path.join('build', 'lib', 'libpi_cpp.{0}'.format(suffix)),
-                  os.path.join('build', 'lib', 'libpi_f90.{0}'.format(suffix)),
+                  os.path.join('build', 'lib', 'libpi_fortran.{0}'.format(suffix)),
                   os.path.join('build', 'pi_cpp_export.h'),
                   os.path.join('pi', 'pi.h')]:
             copy2(os.path.join(cwd, f), _target_path)

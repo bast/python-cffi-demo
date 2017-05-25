@@ -30,7 +30,7 @@ approximate_pi_c = _lib_c.approximate_pi_c
 _lib_fortran = get_lib_handle(
     ['-DPI_API='],
     'pi.h',
-    'pi_f90',
+    'pi_fortran',
     _build_dir,
     _include_dir
 )
