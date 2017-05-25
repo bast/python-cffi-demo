@@ -5,19 +5,19 @@ import pi
 def test_pi_python():
     num_points = 1000000
     result = pi.approximate_pi_python(num_points)
-    assert abs(result - 3.141593) < 1.0e-3
+    assert abs(result - 3.141593) < 2.0e-3
 
 
 def test_pi_c():
     num_points = 1000000
     result = pi.approximate_pi_c(num_points)
-    assert abs(result - 3.141593) < 1.0e-3
+    assert abs(result - 3.141593) < 2.0e-3
 
 
 def test_pi_fortran():
     num_points = 1000000
     result = pi.approximate_pi_fortran(num_points)
-    assert abs(result - 3.141593) < 1.0e-3
+    assert abs(result - 3.141593) < 2.0e-3
 
 
 def print_timings():
