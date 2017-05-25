@@ -22,6 +22,8 @@ def test_pi_fortran():
 
 
 def print_timings():
+    print('num points: {0}'.format(num_points))
+
     for (lang, function) in [('python', pi.approximate_pi_python),
                              ('c', pi.approximate_pi_c),
                              ('fortran', pi.approximate_pi_fortran)]:

@@ -89,7 +89,8 @@ of points in `test.py`.
 ```shell
 $ PI_BUILD_DIR=build python test.py
 
-python  pi=3.14163 time spent: 1.755 sec
-c       pi=3.14190 time spent: 0.042 sec
+num points: 2000000
+python  pi=3.14163 time spent: 1.749 sec
+c       pi=3.14190 time spent: 0.041 sec
 fortran pi=3.14225 time spent: 0.126 sec
 ```
