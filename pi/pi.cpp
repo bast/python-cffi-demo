@@ -16,13 +16,10 @@ double approximate_pi_c(const int num_points)
     {
         double x = ((double)rand() / (RAND_MAX));
         double y = ((double)rand() / (RAND_MAX));
-        if (distance_to_origin_squared(x, y) < 1.0)
-        {
-            num_inside++;
-        }
+
+        if (distance_to_origin_squared(x, y) < 1.0) num_inside++;
     }
 
-    // we multiply by 4 to get the full circle
-    // from the 4 segments
+    // we multiply by 4 to get the full circle from the 4 segments
     return 4.0 * num_inside / ((double)num_points);
 }
