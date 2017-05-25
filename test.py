@@ -2,7 +2,7 @@ import time
 import pi
 
 
-num_points = 5000000
+num_points = 2000000
 pi_reference = 3.141593
 
 
