@@ -48,14 +48,33 @@ future.
 - Provide a Python API to your compiled library and leverage Python tools
 
 
-## How to configure, build, and test this demo
+## Installing Python dependencies
+
+In this example using [Virtual Environments](http://python-guide.readthedocs.io/en/latest/dev/virtualenvs/)
+but also
+[Anaconda](https://www.continuum.io/downloads) or
+[Miniconda](https://conda.io/miniconda.html) will do the job:
+
+```
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+
+## How to configure and build the compiled libraries
 
 ```
 mkdir build
 cd build
 cmake ..
 make
-cd ..
+```
+
+
+## How to test this demo
+
+```
 PI_BUILD_DIR=build pytest -vv test.py
 ```
 
