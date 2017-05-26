@@ -6,11 +6,9 @@ def _distance_to_origin_squared(x, y):
 
 
 def approximate_pi(num_points):
-
     random.seed(0)
 
     num_inside = 0
-
     for _ in range(num_points):
         x = random.uniform(0.0, 1.0)
         y = random.uniform(0.0, 1.0)
