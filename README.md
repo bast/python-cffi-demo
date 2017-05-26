@@ -48,6 +48,15 @@ future.
 - Provide a Python API to your compiled library and leverage Python tools
 
 
+## Requirements
+
+- Python
+- [pytest](https://docs.pytest.org)
+- [Python CFFI](https://cffi.readthedocs.io)
+- [CMake](https://cmake.org/download/)
+- Fortran and C++ compilers
+
+
 ## Installing Python dependencies
 
 In this example using [Virtual Environments](http://python-guide.readthedocs.io/en/latest/dev/virtualenvs/)
@@ -77,14 +86,6 @@ make
 ```
 PI_BUILD_DIR=build pytest -vv test.py
 ```
-
-## Requirements
-
-- Python
-- [pytest](https://docs.pytest.org)
-- [Python CFFI](https://cffi.readthedocs.io)
-- [CMake](https://cmake.org/download/)
-- Fortran and C++ compilers
 
 
 ## Installing with pip
