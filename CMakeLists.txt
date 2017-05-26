@@ -24,6 +24,7 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
+# generated export header will be placed here
 include_directories(${PROJECT_BINARY_DIR})
 
 # c library
@@ -64,5 +65,6 @@ target_link_libraries(
     pi_fortran
     )
 
+# we let cmake generate the export header
 include(GenerateExportHeader)
 generate_export_header(pi_cpp)
