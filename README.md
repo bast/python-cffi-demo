@@ -25,8 +25,8 @@ At the same time we demonstrate how to automatically test the interface and the
 
 ## Limitations
 
-We do not discuss memory allocation strategies (yet). This is something for the
-future.
+We do not discuss memory allocation strategies.
+For this have a look at [this demo](https://github.com/bast/cffi-mem-alloc-example).
 
 
 ## Lower-level learning goals
