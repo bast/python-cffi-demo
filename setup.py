@@ -20,7 +20,7 @@ def run_cmake():
         print("Please install/load CMake and re-run setup.")
         sys.exit(-1)
 
-    _build_dir = os.path.join(os.path.split(__file__)[0], 'build')
+    _build_dir = os.path.join(os.path.split(__file__)[0], 'build_setup_py')
     _dir_util.mkpath(_build_dir)
     os.chdir(_build_dir)
 
@@ -61,9 +61,9 @@ class install(_install.install):
         else:
             suffix = 'so'
 
-        for f in [os.path.join('build', 'lib', 'libpi_cpp.{0}'.format(suffix)),
-                  os.path.join('build', 'lib', 'libpi_fortran.{0}'.format(suffix)),
-                  os.path.join('build', 'pi_cpp_export.h'),
+        for f in [os.path.join('build_setup_py', 'lib', 'libpi_cpp.{0}'.format(suffix)),
+                  os.path.join('build_setup_py', 'lib', 'libpi_fortran.{0}'.format(suffix)),
+                  os.path.join('build_setup_py', 'pi_cpp_export.h'),
                   os.path.join('pi', 'pi.h')]:
             copy2(os.path.join(cwd, f), _target_path)
 
