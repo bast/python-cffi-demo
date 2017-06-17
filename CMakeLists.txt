@@ -31,20 +31,20 @@ include_directories(${PROJECT_BINARY_DIR})
 add_library(
     pi_cpp
     SHARED
-    pi/pi.cpp
+    island/pi.cpp
     )
 
 # fortran library
 add_library(
     pi_fortran
     SHARED
-    pi/pi.f90
+    island/pi.f90
     )
 
 # c executable
 add_executable(
     pi_cpp.x
-    pi/main.cpp
+    island/main.cpp
     )
 # linked against both c and fortran libraries
 target_link_libraries(
@@ -56,7 +56,7 @@ target_link_libraries(
 # fortran executable
 add_executable(
     pi_fortran.x
-    pi/main.f90
+    island/main.f90
     )
 # linked against both c and fortran libraries
 target_link_libraries(

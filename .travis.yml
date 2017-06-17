@@ -59,7 +59,7 @@ script:
   - virtualenv venv
   - source venv/bin/activate
   - pip install git+https://github.com/bast/python-cffi-demo.git
-  - python -c 'import pi; print(pi.approximate_pi_c(100))'
+  - python -c 'import island; print(island.approximate_pi_c(100))'
 
 notifications:
   email: false

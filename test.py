@@ -1,5 +1,5 @@
 import time
-import pi
+import island
 
 
 num_points = 2000000
@@ -7,26 +7,26 @@ pi_reference = 3.141593
 
 
 def test_pi_python():
-    result = pi.approximate_pi_python(num_points)
+    result = island.approximate_pi_python(num_points)
     assert abs(result - pi_reference) < 2.0e-3
 
 
 def test_pi_c():
-    result = pi.approximate_pi_python(num_points)
+    result = island.approximate_pi_python(num_points)
     assert abs(result - pi_reference) < 2.0e-3
 
 
 def test_pi_fortran():
-    result = pi.approximate_pi_python(num_points)
+    result = island.approximate_pi_python(num_points)
     assert abs(result - pi_reference) < 2.0e-3
 
 
 def print_timings():
     print('num points: {0}'.format(num_points))
 
-    for (lang, function) in [('python', pi.approximate_pi_python),
-                             ('c', pi.approximate_pi_c),
-                             ('fortran', pi.approximate_pi_fortran)]:
+    for (lang, function) in [('python', island.approximate_pi_python),
+                             ('c', island.approximate_pi_c),
+                             ('fortran', island.approximate_pi_fortran)]:
         t0 = time.clock()
         result = function(num_points)
         time_spent = time.clock() - t0

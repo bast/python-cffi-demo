@@ -51,7 +51,7 @@ class install(_install.install):
     def run(self):
         cwd = os.getcwd()
         _install.install.run(self)
-        _target_path = os.path.join(get_python_lib(), 'pi')
+        _target_path = os.path.join(get_python_lib(), 'island')
 
         if not os.path.exists(_target_path):
              os.makedirs(_target_path)
@@ -64,17 +64,17 @@ class install(_install.install):
         for f in [os.path.join('build_setup_py', 'lib', 'libpi_cpp.{0}'.format(suffix)),
                   os.path.join('build_setup_py', 'lib', 'libpi_fortran.{0}'.format(suffix)),
                   os.path.join('build_setup_py', 'pi_cpp_export.h'),
-                  os.path.join('pi', 'pi.h')]:
+                  os.path.join('island', 'pi.h')]:
             copy2(os.path.join(cwd, f), _target_path)
 
 
-setup(name='pi',
+setup(name='island',
       version='0.0.0',
       description='Library to get approximate pi on a desert island.',
       author='Slim Shady',
       author_email='me@example.org',
       url='http://example.org',
-      packages=['pi'],
+      packages=['island'],
       license='MPL-v2.0',
       install_requires=['cffi'],
       cmdclass={'install': install, 'build': build})
