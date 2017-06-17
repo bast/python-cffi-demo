@@ -50,7 +50,7 @@ add_executable(
 target_link_libraries(
     pi_cpp.x
     pi_cpp
-    pi_fortran
+#   pi_fortran
     )
 
 # fortran executable
@@ -61,7 +61,7 @@ add_executable(
 # linked against both c and fortran libraries
 target_link_libraries(
     pi_fortran.x
-    pi_cpp
+#   pi_cpp
     pi_fortran
     )
 
