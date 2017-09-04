@@ -12,12 +12,12 @@ def test_pi_python():
 
 
 def test_pi_c():
-    result = island.approximate_pi_python(num_points)
+    result = island.approximate_pi_c(num_points)
     assert abs(result - pi_reference) < 2.0e-3
 
 
 def test_pi_fortran():
-    result = island.approximate_pi_python(num_points)
+    result = island.approximate_pi_fortran(num_points)
     assert abs(result - pi_reference) < 2.0e-3
 
 
