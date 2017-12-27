@@ -84,7 +84,7 @@ make
 ## How to test this demo
 
 ```
-PI_BUILD_DIR=build pytest -vv test.py
+PI_LIBRARY_DIR=build/lib PI_INCLUDE_DIR=build/include pytest -vv test.py
 ```
 
 
@@ -123,7 +123,7 @@ Default is 2M points but feel free to experiment by increasing the number
 of points in `test.py`.
 
 ```shell
-$ PI_BUILD_DIR=build python test.py
+$ PI_LIBRARY_DIR=build/lib PI_INCLUDE_DIR=build/include python test.py
 
 num points: 2000000
 python  pi=3.14163 time spent: 1.749 sec

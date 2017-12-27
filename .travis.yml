@@ -53,7 +53,7 @@ script:
   - make
   - cd ..
   - pep8 --ignore E501 test.py
-  - PI_BUILD_DIR=build pytest -vv test.py
+  - PI_LIBRARY_DIR=build/lib PI_INCLUDE_DIR=island pytest -vv test.py
   - mkdir test-setup-script
   - cd test-setup-script
   - virtualenv venv

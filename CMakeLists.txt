@@ -67,4 +67,23 @@ target_link_libraries(
 
 # we let cmake generate the export header
 include(GenerateExportHeader)
-generate_export_header(pi_cpp)
+generate_export_header(
+    pi_cpp
+    BASE_NAME pi
+    )
+
+install(
+    TARGETS
+        pi_cpp
+        pi_fortran
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    )
+
+INSTALL(
+    FILES
+        island/pi.h
+        ${PROJECT_BINARY_DIR}/pi_export.h
+    DESTINATION
+        include
+    )

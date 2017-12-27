@@ -11,12 +11,13 @@ def _get_library_suffix():
         return 'so'
 
 
-def get_lib_handle(definitions, header, library, build_dir, include_dir):
+def get_lib_handle(definitions, header, library, library_dir, include_dir):
     ffi = FFI()
-    interface = Popen(['cc', '-E'] + definitions + [os.path.join(include_dir, header)],
-                      stdout=PIPE).communicate()[0].decode("utf-8")
+    command = ['cc', '-E'] + definitions + [os.path.join(include_dir, header)]
+    interface = Popen(command, stdout=PIPE).communicate()[0].decode("utf-8")
     ffi.cdef(interface)
-
     suffix = _get_library_suffix()
-    lib = ffi.dlopen(os.path.join(build_dir, 'lib{0}.{1}'.format(library, suffix)))
+    lib_file_name = os.path.join(library_dir,
+                                 'lib{0}.{1}'.format(library, suffix))
+    lib = ffi.dlopen(lib_file_name)
     return lib
