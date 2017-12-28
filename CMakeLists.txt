@@ -80,7 +80,7 @@ install(
     ARCHIVE DESTINATION lib
     )
 
-INSTALL(
+install(
     FILES
         island/pi.h
         ${PROJECT_BINARY_DIR}/pi_export.h
